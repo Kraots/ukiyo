@@ -12,7 +12,7 @@ disnake==2.8.0
 disnake-jishaku==2.6.5
 disnake-ext-menus==0.0.3
 pymongo==4.3.3
-git+https://github.com/Scille/umongo
+umongo
 motor
 python-dotenv
 pytz
