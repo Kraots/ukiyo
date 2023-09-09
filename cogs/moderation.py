@@ -408,7 +408,7 @@ class Moderation(commands.Cog):
         em.title = f'You have been banned in `{inter.guild.name}`'
         em.add_field(
             'Banned By',
-            inter.author.display_name + f' **{staff_rank}**',
+            inter.author.display_name + f' (**{staff_rank}**)',
             inline=False
         )
         em.add_field(
@@ -469,7 +469,7 @@ class Moderation(commands.Cog):
         em.title = f'You have been kicked in `{inter.guild.name}`'
         em.add_field(
             'Kicked By',
-            inter.author.display_name + f' **{staff_rank}**',
+            inter.author.display_name + f' (**{staff_rank}**)',
             inline=False
         )
         em.add_field(
