@@ -542,11 +542,11 @@ class Moderation(commands.Cog):
         for text_channel in guild.text_channels:
             if text_channel.id not in (
                 utils.Channels.verify, utils.Channels.rules, utils.Channels.welcome,
-                utils.Channels.intros, utils.Channels.how_to, utils.Channels.staff_chat,
-                utils.Channels.bot_commands, utils.Channels.ideas, utils.Channels.lore_shit,
-                utils.Channels.logs, utils.Channels.messages_logs, utils.Channels.moderation_logs,
-                utils.Channels.github, utils.Channels.discord_notifications, utils.Channels.roblox_logs,
-                utils.Channels.news
+                utils.Channels.intros, utils.Channels.staff_chat,
+                utils.Channels.bot_commands, utils.Channels.logs, utils.Channels.messages_logs,
+                utils.Channels.moderation_logs, utils.Channels.github, utils.Channels.discord_notifications,
+                utils.Channels.news, utils.Channels.boosts, utils.Channels.news,
+                utils.Channels.roles, utils.Channels.colours, utils.Channels.birthdays
             ):
                 overwrite = text_channel.overwrites_for(guild.default_role)
                 overwrite.send_messages = value
