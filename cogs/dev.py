@@ -117,7 +117,7 @@ class Developer(commands.Cog):
 
         await ctx.send("*Restarting...*")
         pid = os.getpid()
-        os.system('nohup python3 main.py &>> activity.log &')
+        os.system('nohup python3.10 main.py &>> activity.log &')
         os.system(f'kill -9 {pid}')
 
     @commands.command(name='toggle')
