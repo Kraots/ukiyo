@@ -341,18 +341,13 @@ class Music(commands.Cog):
 
         player: mafic.Player = await self.get_player(ctx)
 
-        sources = ['`youtube`', '`spotify`', '`soundcloud`']
         await ctx.trigger_typing()
         try:
             tracks = await player.fetch_tracks(query)
         except (mafic.TrackLoadException, IndexError):
-            try:
-                tracks = await player.fetch_tracks(query, mafic.SearchType.SPOTIFY_SEARCH)
-            except (mafic.TrackLoadException, IndexError):
-                return await ctx.reply(
-                    f'{ctx.denial} Could not find song because it doesn\'t '
-                    f'belong to the following: {" | ".join(sources)}'
-                )
+            return await ctx.reply(
+                f'{ctx.denial} Must be a youtube link!'
+            )
 
         if not tracks:
             return await ctx.send(f'> {ctx.denial} No tracks found.')
