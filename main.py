@@ -51,8 +51,8 @@ class Ukiyo(commands.Bot):
 
         self.webhooks = {}
 
-        self.pool = mafic.NodePool(self)
-        self.loop.create_task(self.add_nodes())
+        # self.pool = mafic.NodePool(self)
+        # self.loop.create_task(self.add_nodes())
 
         self.added_views = False
 
@@ -75,7 +75,8 @@ class Ukiyo(commands.Bot):
 
         data: utils.Misc = await utils.Misc.get()
         if data is None:
-            data = await utils.Misc().commit()
+            await utils.Misc().commit()
+            data: utils.Misc = await utils.Misc.get()
         for cmd_name in data.disabled_commands:
             cmd = self.get_command(cmd_name)
             if cmd is None:

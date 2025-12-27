@@ -73,7 +73,7 @@ class Levels(commands.Cog):
         member: The member to view the level of.
         """
 
-        if inter.channel.id not in (1137494263811285082, 1137489789495562371, 1137489770449223771):
+        if inter.channel.id not in (1454110565654859949, 1137489789495562371, 1137489770449223771):
             if not any(r for r in utils.StaffRoles.all if r in (role.id for role in inter.author.roles)):
                 return await inter.send(
                     f'{self.bot.denial} This command can only be used in <#{utils.Channels.bots}>',
@@ -163,7 +163,7 @@ class Levels(commands.Cog):
     async def level_top(self, inter: disnake.AppCmdInter):
         """See the top people with the highest levels."""
 
-        if inter.channel.id not in (1137494263811285082, 1137489789495562371, 1137489770449223771):
+        if inter.channel.id not in (1454110565654859949, 1137489789495562371, 1137489770449223771):
             if not any(r for r in utils.StaffRoles.all if r in (role.id for role in inter.author.roles)):
                 return await inter.send(
                     f'{self.bot.denial} This command can only be used in <#{utils.Channels.bots}>',
@@ -220,7 +220,7 @@ class Levels(commands.Cog):
         member: The member to view the messages of.
         """
 
-        if inter.channel.id not in (1137494263811285082, 1137489789495562371, 1137489770449223771):
+        if inter.channel.id not in (1454110565654859949, 1137489789495562371, 1137489770449223771):
             if not any(r for r in utils.StaffRoles.all if r in (role.id for role in inter.author.roles)):
                 return await inter.send(
                     f'{self.bot.denial} This command can only be used in <#{utils.Channels.bots}>',
@@ -250,7 +250,7 @@ class Levels(commands.Cog):
     async def msg_top(self, inter: disnake.AppCmdInter):
         """See a top of most active users."""
 
-        if inter.channel.id not in (1137494263811285082, 1137489789495562371, 1137489770449223771):
+        if inter.channel.id not in (1454110565654859949, 1137489789495562371, 1137489770449223771):
             if not any(r for r in utils.StaffRoles.all if r in (role.id for role in inter.author.roles)):
                 return await inter.send(
                     f'{self.bot.denial} This command can only be used in <#{utils.Channels.bots}>',

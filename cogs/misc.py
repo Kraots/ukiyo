@@ -204,7 +204,7 @@ class Misc(commands.Cog):
     async def invite(self, inter: disnake.AppCmdInter):
         """Sends the invite to this server."""
 
-        await inter.send('https://discord.gg/cJwsaMHV4r')
+        await inter.send('https://discord.gg/JD5h78VDud')
 
     @commands.slash_command(name='nickname')
     async def nickname(self, inter):

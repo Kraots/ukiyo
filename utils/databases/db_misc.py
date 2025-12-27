@@ -14,10 +14,10 @@ class Misc(Document, GetDoc):
     id = IntField(attribute='_id', default=1114756730157547622)
     disabled_commands = ListField(StrField(), default=[])
     min_account_age = IntField(default=7)
-    bad_words = DictField(StrField(), IntField())
-    rules = ListField(StrField())
+    bad_words = DictField(StrField(), IntField(), default={})
+    rules = ListField(StrField(), default=[])
     in_lockdown = BoolField(default=False)
-    invalidnames = IntField()
+    invalidnames = IntField(default=0)
 
     class Meta:
         collection_name = 'Miscellaneous'

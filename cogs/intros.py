@@ -205,24 +205,19 @@ class IntroHalfOne(Modal):
                 ephemeral=True
             )
         
-        if values['Age'] < 14 or values['Age'] > 19:
+        if values['Age'] < 14:
             if values['Age'] < 14:
                 await utils.try_dm(
                     interaction.author,
                     f'{interaction.bot.denial} Sorry! You are too young for this server.'
                 )
-            elif values['Age'] > 19:
-                await utils.try_dm(
-                    interaction.author,
-                    f'{interaction.bot.denial} Sorry! You are too old for this server.'
-                )
-            await interaction.author.ban(reason='User does not match age limits.')
+            await interaction.author.ban(reason='User is too young.')
             return await utils.log(
                 interaction.bot.webhooks['mod_logs'],
                 title='[BAN]',
                 fields=[
                     ('Member', f'{interaction.author} (`{interaction.author.id}`)'),
-                    ('Reason', f'User does not match age requirements. (`{values["Age"]} y/o`)'),
+                    ('Reason', f'User is too young. (`{values["Age"]} y/o`)'),
                     ('By', f'{interaction.bot.user.mention} (`{interaction.bot.user.id}`)'),
                     ('At', utils.format_dt(datetime.now(), 'F')),
                 ]
@@ -430,24 +425,19 @@ class IntroEdit(Modal):
                 ephemeral=True
             )
         
-        if intro.age < 14 or intro.age > 19:
+        if intro.age < 14:
             if intro.age < 14:
                 await utils.try_dm(
                     interaction.author,
                     f'{interaction.bot.denial} Sorry! You are too young for this server.'
                 )
-            elif intro.age > 19:
-                await utils.try_dm(
-                    interaction.author,
-                    f'{interaction.bot.denial} Sorry! You are too old for this server.'
-                )
-            await interaction.author.ban(reason='User does not match age limits.')
+            await interaction.author.ban(reason='User is too young.')
             return await utils.log(
                 interaction.bot.webhooks['mod_logs'],
                 title='[BAN]',
                 fields=[
                     ('Member', f'{interaction.author} (`{interaction.author.id}`)'),
-                    ('Reason', f'User does not match age requirements. (`{intro.age} y/o`)'),
+                    ('Reason', f'User is too young. (`{intro.age} y/o`)'),
                     ('By', f'{interaction.bot.user.mention} (`{interaction.bot.user.id}`)'),
                     ('At', utils.format_dt(datetime.now(), 'F')),
                 ]

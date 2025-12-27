@@ -47,17 +47,19 @@ class Birthdays(commands.Cog):
                     .replace(' year', '') \
                     .replace(' ', '')
 
-                if age == '20':
-                    if mem.id != self.bot._owner_id:
-                        if any(r for r in StaffRoles.all if r in (role.id for role in mem.roles)) is False:
-                            await utils.try_dm(
-                                mem,
-                                'Hello! Happy birthday for turning 20 years of age, but sadly, that also means you no longer meet '
-                                f'the age requirements of `{guild.name}`, therefore, you have been banned (people can\'t age backwards yk).\n'
-                                'Apologies for the inconvenience, and once again, happy birthday. :tada: :tada:'
-                            )
-                            await self.bot.db.delete('bday', {'_id': mem.id})
-                            return await mem.kick(reason='User birthday and turned 20y/o+')
+                # Just commenting this part out for now.
+                # Might bring it back in the future (with higher age limit obviously).
+                # if age == '20':
+                #     if mem.id != self.bot._owner_id:
+                #         if any(r for r in StaffRoles.all if r in (role.id for role in mem.roles)) is False:
+                #             await utils.try_dm(
+                #                 mem,
+                #                 'Hello! Happy birthday for turning 20 years of age, but sadly, that also means you no longer meet '
+                #                 f'the age requirements of `{guild.name}`, therefore, you have been banned (people can\'t age backwards yk).\n'
+                #                 'Apologies for the inconvenience, and once again, happy birthday. :tada: :tada:'
+                #             )
+                #             await self.bot.db.delete('bday', {'_id': mem.id})
+                #             return await mem.kick(reason='User birthday and turned 20y/o+')
 
                 em = disnake.Embed(title=f'Happy {age}th birthday {mem.display_name}!!! :tada: :tada:', color=mem.color)
                 em.set_image(url='https://cdn.discordapp.com/attachments/938411306762002456/938443264703463514/happy_bday.gif')

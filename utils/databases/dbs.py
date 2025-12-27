@@ -1,7 +1,6 @@
 import os
 import motor.motor_asyncio
 
-
 key1 = os.getenv('MONGODBLEVELSKEY')
 cluster1 = motor.motor_asyncio.AsyncIOMotorClient(key1)
 levels_database = cluster1['Ukiyo']  # Levels

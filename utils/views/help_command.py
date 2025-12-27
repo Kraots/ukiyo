@@ -136,7 +136,7 @@ class FrontPageSource(menus.PageSource):
             Use "{menu.ctx.clean_prefix}help <category>" for more info on a category.
             Use the dropdown menu below to select a category.
 
-            **NOTE:** Some commands may only work in <#1137494263811285082>
+            **NOTE:** Some commands may only work in <#1454110565654859949>
         """
         )
 
